@@ -1,16 +1,16 @@
 "use client"
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 
 import { Banner, NFTCard } from '@/components';
 import images from '@/public/assets';
-// import { NFTContext } from '../context/NFTContext';
+import { NFTContext } from '../context/NFTContext';
 // import { getCreators } from '../utils/getTopCreators';
 // import { shortenAddress } from '../utils/shortenAddress';
 
 const Home = () => {
-  // const { fetchNFTs } = useContext(NFTContext);
+  const { fetchNFTs } = useContext(NFTContext);
   const [hideButtons, setHideButtons] = useState(false);
   const [nfts, setNfts] = useState([]);
   const [nftsCopy, setNftsCopy] = useState([]);
@@ -20,16 +20,16 @@ const Home = () => {
   const scrollRef = useRef(null);
   const { theme } = useTheme();
 
-  // useEffect(() => {
-  //   fetchNFTs()
-  //     .then((items) => {
-  //       const sortedNfts = [...items];
-  //       sortedNfts.sort((a, b) => b.tokenId - a.tokenId);
-  //       setNfts(sortedNfts);
-  //       setNftsCopy(items);
-  //       setIsLoading(false);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetchNFTs()
+      .then((items) => {
+        const sortedNfts = [...items];
+        sortedNfts.sort((a, b) => b.tokenId - a.tokenId);
+        setNfts(sortedNfts);
+        setNftsCopy(items);
+        setIsLoading(false);
+      });
+  }, []);
 
   useEffect(() => {
     const sortedNfts = [...nfts];

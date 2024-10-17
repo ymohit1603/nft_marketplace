@@ -3,6 +3,7 @@ import { ThemeProvider } from 'next-themes';
 
 import { Navbar, Footer } from '@/components/index'
 import Script from "next/script";
+import { NFTProvider } from "@/context/NFTContext";
 
 export const metadata = {
   title: "Create Next App",
@@ -14,6 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <NFTProvider>
       <ThemeProvider attribute="class">
         <body className="antialiased">
           <div className="dark:bg-nft-dark bg-white min-h-screen">
@@ -26,7 +28,8 @@ export default function RootLayout({
             crossOrigin="anonymous"
           />
         </body>
-      </ThemeProvider>
+        </ThemeProvider>
+        </NFTProvider>
     </html>
   );
 }
