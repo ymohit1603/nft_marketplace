@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes';
 
 import { Button, Input, Loader } from '@/components';
 import images from '../assets';
-import { NFTContext } from '../context/NFTContext';
+import { NFTContext } from '@/context/NFTContext';
 
 const CreateNFT = () => {
   const { uploadToIPFS, createNFT, isLoadingNFT } = useContext(NFTContext);
@@ -64,7 +64,7 @@ const CreateNFT = () => {
             { fileUrl && (
             <aside>
               <div>
-                <img src={fileUrl} alt="asset_file" />
+                <Image src={fileUrl} alt="asset_file" />
               </div>
             </aside>
             ) }
