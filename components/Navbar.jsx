@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 import { Button } from '.';
 import images from '@/public/assets';
-// import { NFTContext } from '../context/NFTContext';
+import { NFTContext } from '../context/NFTContext';
 
 const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
   const generateLink = (i) => {
@@ -43,8 +43,8 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
 };
 
 const ButtonGroup = ({ router, setActive, setIsOpen }) => {
-  // const { connectWallet, currentAccount } = useContext(NFTContext);
-  return (1) ? (
+  const { connectWallet, currentAccount } = useContext(NFTContext);
+  return (currentAccount) ? (
     <Button
       btnName="Create"
       classStyles="mx-2 rounded-xl"
