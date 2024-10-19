@@ -1,3 +1,4 @@
+"use client"
 import { useState, useCallback, useMemo, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { useDropzone } from 'react-dropzone';

@@ -1,6 +1,7 @@
+"use client"
 import { useState, useEffect, useContext } from 'react';
 
-import { NFTContext } from '../context/NFTContext';
+import { NFTContext } from '@/context/NFTContext';
 import { NFTCard, Loader } from '@/components';
 
 const ListedNFTs = () => {
