@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Web3Modal from 'web3modal';
-import { ethers } from 'ethers';
+import { ethers } from 'hardhat';
 import axios from 'axios';
 import { create as ipfsHttpClient } from 'ipfs-http-client';
 
@@ -103,7 +103,7 @@ export const NFTProvider = ({ children }) => {
 
   const fetchNFTs = async () => {
     setIsLoadingNFT(false);
-    const provider = new ethers.providers.JsonRpcProvider(`https://eth-goerli.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`);
+    const provider = new ethers.providers.JsonRpcProvider(`https://eth-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`);
     const contract = fetchContract(provider);
 
     const data = await contract.fetchMarketItems();

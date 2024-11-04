@@ -5,9 +5,9 @@ import { useTheme } from 'next-themes';
 
 import { Banner, CreatorCard, NFTCard } from '@/components';
 import images from '@/public/assets';
-import { NFTContext } from '../context/NFTContext';
-import { getCreators } from '../utils/getTopCreators';
-import { shortenAddress } from '../utils/shortenAddress';
+import { NFTContext } from '@/context/NFTContext';
+import { getCreators } from '@/utils/getTopCreators';
+import { shortenAddress } from '@/utils/shortenAddress';
 import SearchBar from '@/components/SearchBar';
 
 const Home = () => {
